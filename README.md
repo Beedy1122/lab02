@@ -446,5 +446,3 @@ Initial commit
 $ nano Hello_world.cpp
 $ cat Hello_world.cpp
 ```
-
-</p>
