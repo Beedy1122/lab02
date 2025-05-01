@@ -247,9 +247,17 @@ To https://github.com/Beedy1122/lab02.git
 </details>
 
 9. Проверьте, что история коммитов доступна в удалёный репозитории.
+
 <details>
   <p>
   <summary> 
+
+```
+$ git log
+```
+  </summary>
+  </p>
+  <p>
 
 ```
 commit 7b36c19e708e11043e9ca8ce62b396e4f2bf1ed1 (HEAD -> master, origin/master)
