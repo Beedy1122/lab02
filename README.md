@@ -619,7 +619,8 @@ Fast-forward
 </details>
 
  11. С помощью команды git log просмотрите историю в локальной версии ветки master.
-    <details>
+
+<details>
   <p>
   <summary> 
 
