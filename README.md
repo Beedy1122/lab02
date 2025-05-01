@@ -114,3 +114,29 @@ To https://github.com/Beedy1122/lab02.git
 
 </p>
 </details>
+
+3. Создайте файл hello_world.cpp в локальной копии репозитория (который должен был появиться на шаге 2). Реализуйте программу Hello world на языке C++ используя плохой стиль кода. Например, после заголовочных файлов вставьте строку using namespace std;.
+<details>
+<p>
+<summary>
+
+```
+$ cat > examples/Hello_world.cpp <<EOF
+```
+
+</summary>
+</p>
+<p>
+
+```
+> #include <iostream>
+> using namespace std;
+> int main(int argc, char** argv)
+> {
+> cout<<"Hello World \n";
+> }
+> EOF
+```
+
+</p>
+</details>
