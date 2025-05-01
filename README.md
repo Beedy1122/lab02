@@ -297,16 +297,16 @@ Date:   Thu May 1 18:36:19 2025 +0300
 $ git checkout -b 'patch1'
 ```
 
-</summary>
-</p>
-<p>
+ </summary>
+ </p>
+ <p>
 
 ```
 Переключились на новую ветку «patch1»
 ```
 
-</p>
-</detail>
+ </p>
+</details>
 
 2.Внесите изменения в ветке patch1 по исправлению кода и избавления от using namespace std;.
 <details>
@@ -467,3 +467,238 @@ std::cout<<Hello world from" <<name<<std::endl;//res
 
 </p>
 </details>
+
+7.commit, push.
+  <details>
+  <p>
+  <summary> 
+
+```
+$ git commit -a
+```
+
+</summary>
+</p>
+<p>
+
+```
+[patch1 10f7ccb] Commets
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+```
+
+</p>
+</details>
+<details>
+<p>
+<summary>
+
+```
+$ git push origin patch1
+```
+
+</summary>
+</p>
+<p>
+
+```
+Перечисление объектов: 7, готово.
+Подсчет объектов: 100% (7/7), готово.
+При сжатии изменений используется до 3 потоков
+Сжатие объектов: 100% (3/3), готово.
+Запись объектов: 100% (4/4), 335 байтов | 335.00 КиБ/с, готово.
+Всего 4 (изменений 2), повторно использовано 0 (изменений 0), повторно использовано пакетов 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Beedy1122/lab02.git
+   b31bea4..10f7ccb  patch1 -> patch1
+```
+
+</p>
+</details>
+
+8. Проверьте, что новые изменения есть в созданном на шаге 5 pull-request
+<details>
+<p>
+<summary>
+
+```
+$ git log
+```
+
+</summary>
+</p>
+<p>
+
+```
+commit 10f7ccb04653647774d2bf09e0d0e86d3fd4a02e (HEAD -> patch1, origin/patch1)
+Author: Beedy1122 <sashabeedy@gmail.com>
+Date:   Thu May 1 23:15:02 2025 +0300
+
+    Commets
+
+commit b31bea4f9565d50a2a79d3ef684556fe998cb1f1
+Author: Beedy1122 <sashabeedy@gmail.com>
+Date:   Thu May 1 19:57:12 2025 +0300
+
+    New Hello World in patch1
+
+commit 7b36c19e708e11043e9ca8ce62b396e4f2bf1ed1 (origin/master, master)
+Author: Beedy1122 <sashabeedy@gmail.com>
+Date:   Thu May 1 19:42:49 2025 +0300
+
+    file
+
+commit 44b94fb164e3c9370979a80102cd781decf2b843
+Author: Beedy1122 <sashabeedy@gmail.com>
+Date:   Thu May 1 19:35:59 2025 +0300
+
+    Hello world added
+
+commit b7883dd4ad7abd3858df474f609d86003ad6d99b
+Author: Beedy1122 <sashabeedy@gmail.com>
+Date:   Mon Apr 28 21:49:11 2025 +0300
+
+    added README.md
+
+commit a1fafb08bd9ce7c699e49ad095d996d5adc831f7 (origin/main)
+Author: Beedy1122 <sashabeedy@gmail.com>
+Date:   Thu May 1 18:36:19 2025 +0300
+
+    Initial commit
+```
+
+</p>
+</details>
+
+9. В удалённый репозитории выполните слияние PR patch1 -> master и удалите ветку patch1 в удаленном репозитории.
+10. Локально выполните pull.
+  <details>
+  <p>
+  <summary> 
+
+```
+$ git checkout master
+```
+
+  </summary>
+  </p>
+  <p>
+
+```
+Переключились на ветку «master»
+```
+
+</p>
+</details>
+<details>
+<p>
+<summary>
+
+```
+$ git pull origin master
+```
+
+</summary>
+</p>
+<p>
+
+```
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Распаковка объектов: 100% (1/1), 890 байтов | 890.00 КиБ/с, готово.
+Из https://github.com/Beedy1122/lab02
+ * branch            master     -> FETCH_HEAD
+   7b36c19..fbd9713  master     -> origin/master
+Обновление 7b36c19..fbd9713
+Fast-forward
+ examples/Hello_world.cpp | 9 ++++-----
+ 1 file changed, 4 insertions(+), 5 deletions(-)
+```
+
+</p>
+</details>
+
+ 11. С помощью команды git log просмотрите историю в локальной версии ветки master.
+    <details>
+  <p>
+  <summary> 
+
+```
+$ git log master
+```
+  </summary>
+  </p>
+  <p>
+    
+```
+commit fbd9713b338290d556b3ff8fd5ecb8d813ceee7e (HEAD -> master, origin/master)
+Merge: 7b36c19 10f7ccb
+Author: Beedy1122 <sashabeedy@gmail.com>
+Date:   Thu May 1 23:21:35 2025 +0300
+
+    Merge pull request #1 from Beedy1122/patch1
+    
+    New Hello World in patch1
+
+commit 10f7ccb04653647774d2bf09e0d0e86d3fd4a02e (origin/patch1, patch1)
+Author: Beedy1122 <sashabeedy@gmail.com>
+Date:   Thu May 1 23:15:02 2025 +0300
+
+    Commets
+
+commit b31bea4f9565d50a2a79d3ef684556fe998cb1f1
+Author: Beedy1122 <sashabeedy@gmail.com>
+Date:   Thu May 1 19:57:12 2025 +0300
+
+    New Hello World in patch1
+
+commit 7b36c19e708e11043e9ca8ce62b396e4f2bf1ed1
+Author: Beedy1122 <sashabeedy@gmail.com>
+Date:   Thu May 1 19:42:49 2025 +0300
+
+    file
+
+commit 44b94fb164e3c9370979a80102cd781decf2b843
+Author: Beedy1122 <sashabeedy@gmail.com>
+Date:   Thu May 1 19:35:59 2025 +0300
+
+    Hello world added
+
+commit b7883dd4ad7abd3858df474f609d86003ad6d99b
+Author: Beedy1122 <sashabeedy@gmail.com>
+Date:   Mon Apr 28 21:49:11 2025 +0300
+
+    added README.md
+
+commit a1fafb08bd9ce7c699e49ad095d996d5adc831f7 (origin/main)
+Author: Beedy1122 <sashabeedy@gmail.com>
+Date:   Thu May 1 18:36:19 2025 +0300
+
+    Initial commit
+```
+
+</p>
+</details>
+
+12. Удалите локальную ветку patch1.
+     <details>
+  <p>
+  <summary> 
+
+```
+$ git branch -D patch1
+```
+
+</summary>
+</p>
+<p>
+
+```
+Ветка patch1 удалена (была 10f7ccb).
+```
+
+</p>
+</details>
+
+## Часть 3
+  
