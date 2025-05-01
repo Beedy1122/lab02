@@ -446,3 +446,22 @@ Initial commit
 $ nano Hello_world.cpp
 $ cat Hello_world.cpp
 ```
+
+</summary>
+</p>
+<p>
+
+```
+#include <iostream>
+#include <string>
+int main(int argc, char** argv)
+{
+std::string name;
+std::cout<<"Enter your name \n";
+std::cin>>name;
+std::cout<<Hello world from" <<name<<std::endl;//res
+}
+```
+
+</p>
+</details>
