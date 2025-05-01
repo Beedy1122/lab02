@@ -626,6 +626,7 @@ Fast-forward
 ```
 $ git log master
 ```
+
   </summary>
   </p>
   <p>
