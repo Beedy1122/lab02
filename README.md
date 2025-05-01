@@ -929,3 +929,33 @@ $ git rebase --continue
 </p>
 </details>
 
+7. Сделайте force push в ветку patch2
+  <details>
+  <p>
+  <summary> 
+      
+```
+$ git push --force origin patch2
+```
+  </summary>
+  </p>
+  <p>
+    
+```
+Перечисление объектов: 11, готово.
+Подсчет объектов: 100% (11/11), готово.
+При сжатии изменений используется до 3 потоков
+Сжатие объектов: 100% (6/6), готово.
+Запись объектов: 100% (8/8), 766 байтов | 766.00 КиБ/с, готово.
+Всего 8 (изменений 4), повторно использовано 0 (изменений 0), повторно использовано пакетов 0
+remote: Resolving deltas: 100% (4/4), completed with 2 local objects.
+To https://github.com/Beedy1122/lab02.git
+ + f4633a1...6789675 patch2 -> patch2 (forced update)
+```
+
+</p>
+</details>
+        
+8. Убедитеcь, что в pull-request пропали конфликтны.
+9. Вмержите pull-request patch2 -> master.
+        
