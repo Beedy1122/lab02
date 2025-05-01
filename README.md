@@ -217,4 +217,64 @@ $ git commit -a
 
 </p>
 </details>
+
+8. Запуште изменения в удалёный репозиторий.
+<details>
+  <p>
+  <summary> 
+
+```
+$ git push origin master
+```
+
 </summary>
+</p>
+<p>
+
+```
+Перечисление объектов: 9, готово.
+Подсчет объектов: 100% (9/9), готово.
+При сжатии изменений используется до 3 потоков
+Сжатие объектов: 100% (6/6), готово.
+Запись объектов: 100% (8/8), 845 байтов | 845.00 КиБ/с, готово.
+Всего 8 (изменений 1), повторно использовано 0 (изменений 0), повторно использовано пакетов 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/Beedy1122/lab02.git
+   b7883dd..7b36c19  master -> master
+```
+
+</p>
+</details>
+
+9. Проверьте, что история коммитов доступна в удалёный репозитории.
+<details>
+  <p>
+  <summary> 
+
+```
+commit 7b36c19e708e11043e9ca8ce62b396e4f2bf1ed1 (HEAD -> master, origin/master)
+Author: Beedy1122 <sashabeedy@gmail.com>
+Date:   Thu May 1 19:42:49 2025 +0300
+
+    file
+
+commit 44b94fb164e3c9370979a80102cd781decf2b843
+Author: Beedy1122 <sashabeedy@gmail.com>
+Date:   Thu May 1 19:35:59 2025 +0300
+
+    Hello world added
+
+commit b7883dd4ad7abd3858df474f609d86003ad6d99b
+Author: Beedy1122 <sashabeedy@gmail.com>
+Date:   Mon Apr 28 21:49:11 2025 +0300
+
+    added README.md
+
+commit a1fafb08bd9ce7c699e49ad095d996d5adc831f7 (origin/main)
+Author: Beedy1122 <sashabeedy@gmail.com>
+Date:   Thu May 1 18:36:19 2025 +0300
+```
+
+</p>
+</details>
+
