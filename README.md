@@ -286,3 +286,165 @@ Date:   Thu May 1 18:36:19 2025 +0300
 </p>
 </details>
 
+## Часть 2
+1. В локальной копии репозитория создайте локальную ветку patch1.
+<details>
+  <p>
+  <summary> 
+
+```
+$ git checkout -b 'patch1'
+```
+
+</summary>
+</p>
+<p>
+
+```
+Переключились на новую ветку «patch1»
+```
+
+</p>
+</detail>
+2.Внесите изменения в ветке patch1 по исправлению кода и избавления от using namespace std;.
+<details>
+  <p>
+  <summary> 
+
+```   
+$ nano Hello_world.cpp
+$ cat Hello_world.cpp
+```
+
+</summary>
+</p>
+<p>
+
+```
+#include <iostream>
+#include <string>
+int main(int argc, char** argv)
+{
+std::string name;
+std::cout<<"Enter your name \n";
+std::cin>>name;
+std::cout<<Hello world from" <<name<<std::endl;
+}
+```
+</p>
+</details>
+
+3. commit, push локальную ветку в удалённый репозиторий.
+
+```
+$ git add Hello_world.cpp
+```
+
+<details>
+<p>
+<summary>
+
+```
+$ git commit -m"New Hello World in patch1"
+```
+
+</summary>
+</p>
+<p>
+
+```
+[patch1 b31bea4] New Hello World in patch1
+ 1 file changed, 4 insertions(+), 5 deletions(-)
+```
+
+</p>
+</details>
+<details>
+<p>
+<summary>
+
+```
+$ git push origin patch1
+```
+
+</summary>
+</p>
+<p>
+
+```
+Перечисление объектов: 7, готово.
+Подсчет объектов: 100% (7/7), готово.
+При сжатии изменений используется до 3 потоков
+Сжатие объектов: 100% (3/3), готово.
+Запись объектов: 100% (4/4), 393 байта | 393.00 КиБ/с, готово.
+Всего 4 (изменений 2), повторно использовано 0 (изменений 0), повторно использовано пакетов 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote: 
+remote: Create a pull request for 'patch1' on GitHub by visiting:
+remote:      https://github.com/Beedy1122/lab02/pull/new/patch1
+remote: 
+To https://github.com/Beedy1122/lab02.git
+ * [new branch]      patch1 -> patch1
+```
+
+</p>
+</details>
+
+4.Проверьте, что ветка patch1 доступна в удалёный репозитории.
+ <details>
+  <p>
+  <summary> 
+
+```
+$ git log
+```
+
+</summary>
+</p>
+<p>
+
+```
+commit b31bea4f9565d50a2a79d3ef684556fe998cb1f1 (HEAD -> patch1, origin/patch1)
+Author: Beedy1122 <sashabeedy@gmail.com>
+Date:   Thu May 1 19:57:12 2025 +0300
+
+    New Hello World in patch1
+
+commit 7b36c19e708e11043e9ca8ce62b396e4f2bf1ed1 (origin/master, master)
+Author: Beedy1122 <sashabeedy@gmail.com>
+Date:   Thu May 1 19:42:49 2025 +0300
+
+    file
+
+commit 44b94fb164e3c9370979a80102cd781decf2b843
+Author: Beedy1122 <sashabeedy@gmail.com>
+Date:   Thu May 1 19:35:59 2025 +0300
+
+    Hello world added
+
+commit b7883dd4ad7abd3858df474f609d86003ad6d99b
+Author: Beedy1122 <sashabeedy@gmail.com>
+Date:   Mon Apr 28 21:49:11 2025 +0300
+
+    added README.md
+
+commit a1fafb08bd9ce7c699e49ad095d996d5adc831f7 (origin/main)
+Author: Beedy1122 <sashabeedy@gmail.com>
+Date:   Thu May 1 18:36:19 2025 +0300
+Initial commit
+```
+
+</p>
+</details>
+5.Создайте pull-request patch1 -> master.
+6. локальной копии в ветке patch1 добавьте в исходный код комментарии.
+  <details>
+  <p>
+  <summary>
+
+```
+$ nano Hello_world.cpp
+$ cat Hello_world.cpp
+```
+
+</p>
