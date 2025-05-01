@@ -306,6 +306,7 @@ $ git checkout -b 'patch1'
 
 </p>
 </detail>
+
 2.Внесите изменения в ветке patch1 по исправлению кода и избавления от using namespace std;.
 <details>
   <p>
