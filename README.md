@@ -140,3 +140,81 @@ $ cat > examples/Hello_world.cpp <<EOF
 
 </p>
 </details>
+4.Добавьте этот файл в локальную копию репозитория.
+
+```
+$ git add Hello_world.cpp
+```
+
+5. Закоммитьте изменения с осмысленным сообщением.
+<details>
+  <p>
+  <summary> 
+
+```
+$ git commit -m"Hello world added"
+```
+
+</summary>
+</p>
+<p>
+
+```
+[master 44b94fb] Hello world added
+ 1 file changed, 6 insertions(+)
+ create mode 100644 examples/Hello_world.cpp
+```
+
+</p>
+</details>
+
+6. Изменитьте исходный код так, чтобы программа через стандартный поток ввода запрашивалось имя пользователя. А в стандартный поток вывода печаталось сообщение Hello world from @name, где @name имя пользователя.
+<details>
+<p>
+<summary>
+
+```
+$ nano Hello_world.cpp
+```
+
+</summary>
+</p>
+<p>
+
+```
+#include <iostream>
+#include <string>
+using namespace std;
+int main(int argc, char** argv)
+{
+string name;
+cout<<"Enter your name \n";
+cin>>name;
+cout<<Hello world from" <<name<<endl;
+}
+```
+
+</p>
+</details>
+
+7. Закоммитьте новую версию программы. Почему не надо добавлять файл повторно git add?
+<details>
+<p>
+<summary>
+
+```
+$ git commit -a
+```
+
+</summary>
+</p>
+<p>
+
+```
+[master 7b36c19] file
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+```
+
+</p>
+</details>
+</summary>
