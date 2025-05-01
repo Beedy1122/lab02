@@ -683,7 +683,8 @@ Date:   Thu May 1 18:36:19 2025 +0300
 </details>
 
 12. Удалите локальную ветку patch1.
-     <details>
+
+    <details>
   <p>
   <summary> 
 
@@ -703,4 +704,228 @@ $ git branch -D patch1
 </details>
 
 ## Часть 3
-  
+1.Создайте новую локальную ветку patch2.
+
+<details>
+  <p>
+  <summary>
+
+```
+$ git checkout -b patch2
+```
+
+</summary>
+</p>
+<p>
+
+```
+Переключились на новую ветку «patch2»
+```
+
+</p>
+</details>
+
+2. Измените code style с помощью утилиты clang-format. Например, используя опцию -style=Mozilla.
+
+```
+$ clang-format -style=Mozilla -i Hello_world.cpp
+```
+
+3. commit, push, создайте pull-request patch2 -> master.
+
+<details>
+  <p>
+  <summary> 
+      
+```
+$ git commit -a
+```
+  </summary>
+  </p>
+  <p>
+    
+```
+[patch2 f4633a1] Styled
+ 1 file changed, 6 insertions(+), 5 deletions(-)
+```
+
+</p>
+</details>
+<details>
+<p>
+<summary>
+
+```
+$ git push origin patch2
+```
+
+</summary>
+</p>
+<p>
+
+```
+Перечисление объектов: 7, готово.
+Подсчет объектов: 100% (7/7), готово.
+При сжатии изменений используется до 3 потоков
+Сжатие объектов: 100% (3/3), готово.
+Запись объектов: 100% (4/4), 440 байтов | 440.00 КиБ/с, готово.
+Всего 4 (изменений 1), повторно использовано 0 (изменений 0), повторно использовано пакетов 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'patch2' on GitHub by visiting:
+remote:      https://github.com/Beedy1122/lab02/pull/new/patch2
+remote: 
+To https://github.com/Beedy1122/lab02.git
+ * [new branch]      patch2 -> patch2
+```
+
+</p>
+</details>
+
+4. В ветке master в удаленном репозитории измените комментарии, например, расставьте знаки препинания, переведите комментарии на другой язык.
+ 
+ <details>
+  <p>
+  <summary> 
+      
+```
+$ nano Hello_world.cpp
+$ cat Hello_world.cpp
+```
+
+  </summary>
+  </p>
+  <p>
+
+```
+#include <iostream>
+#include <string>
+int
+main(int argc, char** argv)
+{
+  std::string name;//Имя
+  std::cout << "Enter your name \n";
+  std::cin >> name;
+  std::cout << Hello world from " <<name<<std::endl;//Рез
+}
+```
+
+</p>
+</details>
+<details>
+<p>
+<summary>
+
+```
+$ git commit -a
+```
+
+</summary>
+</p>
+<p>
+
+```
+[master 34dcfed] Rus comments
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+```
+
+</p>
+</details>
+<details>
+<p>
+<summary>
+
+```
+$ git push origin master
+```
+
+</summary>
+</p>
+<p>
+
+```
+Перечисление объектов: 7, готово.
+Подсчет объектов: 100% (7/7), готово.
+При сжатии изменений используется до 3 потоков
+Сжатие объектов: 100% (3/3), готово.
+Запись объектов: 100% (4/4), 357 байтов | 357.00 КиБ/с, готово.
+Всего 4 (изменений 2), повторно использовано 0 (изменений 0), повторно использовано пакетов 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Beedy1122/lab02.git
+   fbd9713..34dcfed  master -> master
+```
+
+</p>
+</details>
+
+5. Убедитесь, что в pull-request появились конфликты.
+6. Для этого локально выполните pull + rebase (точную последовательность команд, следует узнать самостоятельно). Исправьте конфликты.     
+  <details>
+  <p>
+  <summary> 
+      
+```
+$ git checkout patch2
+```
+  </summary>
+  </p>
+  <p>
+
+```
+Переключились на ветку «patch2»
+```
+
+</p>
+</details>
+<details>
+<p>
+<summary>
+
+```
+$ git rebase origin/master
+```
+
+</summary>
+</p>
+<p>
+
+```
+Автослияние examples/Hello_world.cpp
+КОНФЛИКТ (содержимое): Конфликт слияния в examples/Hello_world.cpp
+error: не удалось применить коммит f4633a1... Styled
+подсказка: Resolve all conflicts manually, mark them as resolved with
+подсказка: "git add/rm <conflicted_files>", then run "git rebase --continue".
+подсказка: You can instead skip this commit: run "git rebase --skip".
+подсказка: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Не удалось применить коммит f4633a1... Styled
+```
+
+</p>
+</details>
+
+```
+$ nano Hello_world.cpp
+$ git add .
+```
+
+<details>
+<p>
+<summary>
+
+```
+$ git rebase --continue
+```
+
+</summary>
+</p>
+<p>
+
+```
+[отделённый HEAD 6789675] Rus comments new
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+Успешно перемещён и обновлён refs/heads/patch2.
+```
+
+</p>
+</details>
+
